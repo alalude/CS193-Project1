@@ -28,7 +28,11 @@
 - (void)setCardButtons:(NSArray *)cardButtons
 {
     _cardButtons = cardButtons;
-    for (UIButton *cardButtons in cardButtons)
+    //
+    // added "self." to for loop parameters
+    // for (UIButton *cardButtons in cardButtons)
+    //
+    for (UIButton *cardButtons in self.cardButtons)
     {
         Card *card = [self.deck drawRandomCard];
         [cardButtons setTitle:card.contents forState:UIControlStateSelected];
