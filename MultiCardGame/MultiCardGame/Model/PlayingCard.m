@@ -40,11 +40,6 @@
 //     }
 // }
 
-// Method does work directly on class not eligible to use @property
-+ (NSArray *)validSuits
-{
-    return @[@"♣", @"♦", @"♥", @"♠"];
-}
 
 // The "setter" for suit
 -(void)setSuit:(NSString *)suit
@@ -62,6 +57,19 @@
     return _suit ? _suit : @"?";
 }
 
+- (void)setRank:(NSUInteger)rank
+{
+    if (rank <= [PlayingCard maxRank])
+    {
+        _rank = rank;
+    }
+}
+
+// Method does work directly on class not eligible to use @property
++ (NSArray *)validSuits
+{
+    return @[@"♣", @"♦", @"♥", @"♠"];
+}
 
 + (NSArray *)rankStrings
 {
@@ -75,14 +83,6 @@
     //return [self rankStrings].count -1;
     
     return [[self rankStrings] count] -1;
-}
-
-- (void)setRank:(NSUInteger)rank
-{
-    if (rank <= [PlayingCard maxRank])
-    {
-        _rank = rank;
-    }
 }
 
 @end
