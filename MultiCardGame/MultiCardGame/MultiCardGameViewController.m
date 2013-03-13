@@ -32,10 +32,16 @@
     // added "self." to for loop parameters
     // for (UIButton *cardButtons in cardButtons)
     //
+    
+   int i = 1; //*!* just for testing
+    
     for (UIButton *cardButtons in self.cardButtons)
     {
         Card *card = [self.deck drawRandomCard];
         [cardButtons setTitle:card.contents forState:UIControlStateSelected];
+        NSLog(@"Card Contents - %d %@", i, card.contents); //*!* just for testing
+        i++; //*!* just for testing
+
     }
 }
 
